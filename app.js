@@ -1,3 +1,13 @@
+const knexfile = require("./knexfile");
+const knex = require("knex")(knexfile.development);
+
+const users = knex
+  .select()
+  .table("users")
+  .then((rows) => {
+    console.log(rows);
+  });
+
 const express = require("express");
 
 // init app
